@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "hexlet-code"
+version = "0.1.0"
+description = "Task app"
+authors = ["emp7yhead <artyomkropp@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+Django = "^4.0.4"
+gunicorn = "^20.1.0"
+python-dotenv = "^0.20.0"
+psycopg2-binary = "^2.9.3"
+
+[tool.poetry.dev-dependencies]
+wemake-python-styleguide = "^0.16.1"
+coverage = "^6.3.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
