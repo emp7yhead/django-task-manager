@@ -1,16 +1,20 @@
 """Views for task manager."""
 from django.shortcuts import render
+from django.views import View
 
 
-def index(request):
-    """Render index page.
+class IndexView(View):
+    """Define view for index page."""
 
-    Args:
-        request: request for page.
+    template_name = 'index.html'
 
-    Returns:
-        HttpResponse.
-    """
-    return render(request, 'index.html', context={
-        'hello': 'Welcome to Task Manager!',
-    })
+    def get(self, request, *args, **kwargs):
+        """Render index page.
+
+        Args:
+            request: request for page.
+
+        Returns:
+            HttpResponse.
+        """
+        return render(self.request, self.template_name)

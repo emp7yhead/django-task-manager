@@ -1,0 +1,17 @@
+{% load i18n %}
+
+<nav class="navbar navbar-expand-md navbar-light" style="background-color: #d3edff;">
+  <a href="#" class="navbar-brand">{% translate 'TaskManager' %}</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarToggle">
+    <div class="navbar-nav mr-auto">
+      <a href="#" class="nav-link" >{% translate 'Users' %}</a> 
+    </div>
+    <div class="navbar-nav">
+      <a href="#" class="btn btn-outline-primary mr-2">{% translate 'Registration' %}</a>
+      <a href="#" class="btn btn-primary">{% translate 'LogIn' %}</a>
+    </div>
+  </div>
+</nav>
