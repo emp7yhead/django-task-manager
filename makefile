@@ -22,8 +22,7 @@ test-coverage:
 test-coverage-report-xml:
 	@poetry run coverage xml
 
-check:
-	@lint test requirements.txt
+check: lint test requirements.txt
 
 secret:
 	@python -c 'import secrets; print(secrets.token_hex())'
