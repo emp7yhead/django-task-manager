@@ -10,11 +10,20 @@ start:
 shell:
 	@poetry run python manage.py shell
 
+lint:
+	@poetry run flake8 task_manager
+
 test:
 	@poetry run coverage run --source='.' manage.py test task_manager/tests
 
-coverage:
+test-coverage:
 	@poetry run coverage report
+
+test-coverage-report-xml:
+	@poetry run coverage xml
+
+check:
+	@lint test requirements.txt
 
 secret:
 	@python -c 'import secrets; print(secrets.token_hex())'
