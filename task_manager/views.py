@@ -1,20 +1,28 @@
 """Views for task manager."""
-from django.shortcuts import render
-from django.views import View
+from django.urls import reverse_lazy
+from django.views.generic import CreateView, ListView, TemplateView
+from django.contrib.auth.models import User
+
+from task_manager.forms import RegisterUserForm
 
 
-class IndexView(View):
+class IndexView(TemplateView):
     """Define view for index page."""
 
     template_name = 'index.html'
 
-    def get(self, request, *args, **kwargs):
-        """Render index page.
 
-        Args:
-            request: request for page.
+class UserListView(ListView):
+    """Define view for users list page."""
 
-        Returns:
-            HttpResponse.
-        """
-        return render(self.request, self.template_name)
+    model = User
+    template_name = 'users.html'
+    context_object_name = 'users'
+
+
+class RegisterUserView(CreateView):
+    """Define view for registration page."""
+
+    form_class = RegisterUserForm
+    template_name = 'registration/register.html'
+    success_url = reverse_lazy('index')
