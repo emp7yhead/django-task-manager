@@ -18,7 +18,6 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
     'webserver',
     '.herokuapp.com',
-    '0.0.0.0',
 ]
 
 INSTALLED_APPS = [
@@ -30,7 +29,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'task_manager',
     'bootstrap4',
+    'crispy_forms',
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
