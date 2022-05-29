@@ -2,7 +2,8 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
 
-class RegisterUserForm(UserCreationForm):
+class RegisterAndUpdateUserForm(UserCreationForm):
+    """Form for creating and updating user."""
 
     class Meta:
         model = User
