@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load i18n crispy_forms_tags %}
+
+{% block header %}{% endblock %}
+{% block content %}
+<h1 class="my-3 text-left">{% translate 'Delete user' %}</h1>
+<form class="text-left" method="post">{% csrf_token %}
+    <p>Are you sure you want to delete {{ object.first_name }} {{ object.last_name }}?</p>
+    {{ form }}
+    <button type="submit" class="btn btn-danger" value="Confirm">{% translate 'Delete' %}</button>
+</form>
+{% endblock content %}
