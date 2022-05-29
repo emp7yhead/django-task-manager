@@ -10,8 +10,13 @@
       <a href="{% url 'users' %}" class="nav-link" >{% translate 'Users' %}</a> 
     </div>
     <div class="navbar-nav">
-      <a href="#" class="btn btn-outline-primary mr-2">{% translate 'Log In' %}</a>
-      <a href="{% url 'sign_up' %}" class="btn btn-primary">{% translate 'Sign Up' %}</a>
+    {% if user.is_authenticated %}
+      <p class="h6 mr-5 mt-auto">Welcome, <strong>{{ user.username }}</strong></p>
+      <a href="{% url 'logout' %}" class="btn btn-outline-primary mr-2">{% translate 'Log Out' %}</a>
+    {% else %}
+      <a href="{% url 'login' %}" class="btn btn-outline-primary mr-2">{% translate 'Log In' %}</a>
+      <a href="{% url 'registration' %}" class="btn btn-primary">{% translate 'Sign Up' %}</a>
+    {% endif %}
     </div>
   </div>
 </nav>
