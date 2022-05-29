@@ -3,7 +3,7 @@
 
 {% block header %}{% endblock %}
 {% block content %}
-<h1 class="my-5 text-left">{% translate 'User registration' %}</h1>
+<h1 class="my-5 text-left">{{ title }}</h1>
 <form class="text-left" method="post">
     {% csrf_token %}
     {{ form.username|as_crispy_field }}
@@ -14,9 +14,9 @@
         <div class="col-6">
             {{ form.last_name|as_crispy_field }}
         </div>
-      </div>
-      {{ form.password1|as_crispy_field }}
-      {{ form.password2|as_crispy_field }}
+    </div>
+    {{ form.password1|as_crispy_field }}
+    {{ form.password2|as_crispy_field }}
     <button type="submit" class="btn btn-primary">{% translate 'Submit' %}</button>
 </form>
 {% endblock content %}
