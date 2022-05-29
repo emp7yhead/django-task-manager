@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-09 22:40+0900\n"
+"POT-Creation-Date: 2022-05-29 23:41+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,13 +25,102 @@ msgid "TaskManager"
 msgstr "Менеджер задач"
 
 #: task_manager/templates/components/navbar.html:10
+#: task_manager/templates/users.html:5
 msgid "Users"
 msgstr "Пользователи"
 
-#: task_manager/templates/components/navbar.html:13
+#: task_manager/templates/components/navbar.html:15
+#, fuzzy
+#| msgid "Log In"
+msgid "Log Out"
+msgstr "Вход"
+
+#: task_manager/templates/components/navbar.html:17
+msgid "Log In"
+msgstr "Вход"
+
+#: task_manager/templates/components/navbar.html:18
 msgid "Sign Up"
 msgstr "Регистрация"
 
-#: task_manager/templates/components/navbar.html:14
-msgid "Log In"
+#: task_manager/templates/index.html:8
+msgid "You are logged in."
+msgstr "Вход выполнен."
+
+#: task_manager/templates/index.html:11
+msgid "Welcome to TaskManager."
+msgstr "Добро пожаловать в Менеджер задач."
+
+#: task_manager/templates/registration/login.html:10
+msgid "Your username and password didn't match. Please try again."
+msgstr "Ваше имя пользователя и пароль не совпадают. Попробуйте снова."
+
+#: task_manager/templates/registration/login.html:17
+#: task_manager/templates/users.html:11
+msgid "Username"
+msgstr "Имя пользователя"
+
+#: task_manager/templates/registration/login.html:20
+msgid "Enter Username"
+msgstr "Введите имя пользователя"
+
+#: task_manager/templates/registration/login.html:24
+msgid "Password"
+msgstr "Пароль"
+
+#: task_manager/templates/registration/login.html:27
+msgid "Enter Password"
+msgstr "Введите пароль"
+
+#: task_manager/templates/registration/login.html:30
+msgid "Login user"
 msgstr "Вход"
+
+#: task_manager/templates/registration/register.html:20
+msgid "Submit"
+msgstr "Зарегистрировать"
+
+#: task_manager/templates/users.html:10
+msgid "ID"
+msgstr "ID"
+
+#: task_manager/templates/users.html:12
+msgid "Full name"
+msgstr "Полное имя"
+
+#: task_manager/templates/users.html:13
+msgid "Creation date"
+msgstr "Дата создания"
+
+#: task_manager/templates/users.html:26
+msgid "Update"
+msgstr "Изменить"
+
+#: task_manager/templates/users.html:28
+#: task_manager/templates/users/delete.html:10
+msgid "Delete"
+msgstr "Удалить"
+
+#: task_manager/templates/users/delete.html:6 task_manager/views.py:59
+msgid "Delete user"
+msgstr "Удалить пользователя"
+
+#: task_manager/views.py:22
+msgid "Task Manager"
+msgstr "Менеджер задач"
+
+#: task_manager/views.py:31
+msgid "Users list"
+msgstr "Список пользователей"
+
+#: task_manager/views.py:40
+msgid "Register user"
+msgstr "Регистрация"
+
+#: task_manager/views.py:50
+msgid "Update user"
+msgstr "Обновить данные"
+
+#: task_manager/views.py:67
+msgid "Login"
+msgstr "Страница входа"
