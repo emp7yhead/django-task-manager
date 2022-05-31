@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 from django.test import Client, TestCase
 from django.urls import reverse_lazy
 
-from task_manager.forms import RegisterAndUpdateUserForm
+from task_manager.users.forms import RegisterAndUpdateUserForm
 
 
 class RegistrationPageViewTest(TestCase):
@@ -26,7 +26,7 @@ class RegistrationPageViewTest(TestCase):
         self._assert_first_name(form_fields, response)
         self._assert_last_name(form_fields, response)
         self._assert_password(form_fields, response)
-        self._assert_password_confiramtion(form_fields, response)
+        self._assert_password_confirmation(form_fields, response)
 
     def _assert_first_name(self, form_fields, response):
         self.assertIn(
@@ -68,7 +68,7 @@ class RegistrationPageViewTest(TestCase):
             response.rendered_content,
         )
 
-    def _assert_password_confiramtion(self, form_fields, response):
+    def _assert_password_confirmation(self, form_fields, response):
         self.assertIn(
             str(form_fields['password2'].label),
             response.rendered_content,
