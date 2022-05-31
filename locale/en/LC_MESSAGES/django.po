@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-29 23:53+0900\n"
+"POT-Creation-Date: 2022-05-31 12:08+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,7 +23,7 @@ msgid "TaskManager"
 msgstr "Task Manager"
 
 #: task_manager/templates/components/navbar.html:10
-#: task_manager/templates/users.html:5
+#: task_manager/templates/users/users_list.html:5
 msgid "Users"
 msgstr "Users"
 
@@ -39,84 +39,108 @@ msgstr "Log In"
 msgid "Sign Up"
 msgstr "Sign Up"
 
-#: task_manager/templates/index.html:8
-msgid "You are logged in."
-msgstr "You are logged in."
-
-#: task_manager/templates/index.html:11
+#: task_manager/templates/index.html:6
 msgid "Welcome to TaskManager."
 msgstr "Welcome to TaskManager."
 
-#: task_manager/templates/registration/login.html:10
+#: task_manager/templates/login.html:10
 msgid "Your username and password didn't match. Please try again."
 msgstr "Your username and password didn't match. Please try again."
 
-#: task_manager/templates/registration/login.html:17
-#: task_manager/templates/users.html:11
+#: task_manager/templates/login.html:17
+#: task_manager/templates/users/users_list.html:11
 msgid "Username"
 msgstr "Username"
 
-#: task_manager/templates/registration/login.html:20
+#: task_manager/templates/login.html:20
 msgid "Enter Username"
 msgstr "Enter Username"
 
-#: task_manager/templates/registration/login.html:24
+#: task_manager/templates/login.html:24
 msgid "Password"
 msgstr "Password"
 
-#: task_manager/templates/registration/login.html:27
+#: task_manager/templates/login.html:27
 msgid "Enter Password"
 msgstr "Enter Password"
 
-#: task_manager/templates/registration/login.html:30
+#: task_manager/templates/login.html:30
 msgid "Login user"
 msgstr "Login"
 
-#: task_manager/templates/registration/register.html:20
-msgid "Submit"
-msgstr "Submit"
-
-#: task_manager/templates/users.html:10
-msgid "ID"
-msgstr "ID"
-
-#: task_manager/templates/users.html:12
-msgid "Full name"
-msgstr "Full name"
-
-#: task_manager/templates/users.html:13
-msgid "Creation date"
-msgstr "Creation date"
-
-#: task_manager/templates/users.html:26
-msgid "Update"
-msgstr "Update"
-
-#: task_manager/templates/users.html:28
-#: task_manager/templates/users/delete.html:10
-msgid "Delete"
-msgstr "Delete"
-
-#: task_manager/templates/users/delete.html:6 task_manager/views.py:59
+#: task_manager/templates/users/delete.html:6 task_manager/users/views.py:48
 msgid "Delete user"
 msgstr "Delete user"
 
-#: task_manager/views.py:22
-msgid "Task Manager"
-msgstr "Task Manager"
+#: task_manager/templates/users/delete.html:10
+#: task_manager/templates/users/users_list.html:28
+msgid "Delete"
+msgstr "Delete"
 
-#: task_manager/views.py:31
+#: task_manager/templates/users/register.html:20
+msgid "Submit"
+msgstr "Submit"
+
+#: task_manager/templates/users/users_list.html:10
+msgid "ID"
+msgstr "ID"
+
+#: task_manager/templates/users/users_list.html:12
+msgid "Full name"
+msgstr "Full name"
+
+#: task_manager/templates/users/users_list.html:13
+msgid "Creation date"
+msgstr "Creation date"
+
+#: task_manager/templates/users/users_list.html:26
+msgid "Update"
+msgstr "Update"
+
+#: task_manager/users/mixins.py:20
+msgid "You don't have permission to change another user."
+msgstr "You don't have permission to change another user."
+
+#: task_manager/users/mixins.py:26
+msgid "You're not authorized. Please login."
+msgstr "You're not authorized. Please login."
+
+#: task_manager/users/views.py:18
 msgid "Users list"
 msgstr "Users list"
 
-#: task_manager/views.py:40
+#: task_manager/users/views.py:27
 msgid "Register user"
 msgstr "Register user"
 
-#: task_manager/views.py:50
+#: task_manager/users/views.py:28
+msgid "Successfully registered user."
+msgstr "User is successfully registered."
+
+#: task_manager/users/views.py:38
 msgid "Update user"
 msgstr "Update user"
 
-#: task_manager/views.py:67
+#: task_manager/users/views.py:39
+msgid "Successfully updated user."
+msgstr "User is successfully updated."
+
+#: task_manager/users/views.py:49
+msgid "Successfully deleted user."
+msgstr "User is successfully deleted."
+
+#: task_manager/views.py:15
+msgid "Task Manager"
+msgstr "Task Manager"
+
+#: task_manager/views.py:23
 msgid "Login"
 msgstr "Login"
+
+#: task_manager/views.py:24
+msgid "You're logged in"
+msgstr "You are logged in."
+
+#: task_manager/views.py:38
+msgid "You're logged out."
+msgstr "You are logged in."
