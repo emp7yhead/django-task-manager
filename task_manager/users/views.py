@@ -22,7 +22,7 @@ class RegisterUserView(SuccessMessageMixin, generic.CreateView):
     """Define view for registration page."""
 
     form_class = RegisterAndUpdateUserForm
-    template_name = "users/register.html"
+    template_name = "users/create_and_update.html"
     success_url = reverse_lazy("login")
     extra_context = {"title": _("Register user")}
     success_message = _("Successfully registered user.")
@@ -33,7 +33,7 @@ class UpdateUserView(SuccessMessageMixin, UserCheckMixin, generic.UpdateView):
 
     model = User
     form_class = RegisterAndUpdateUserForm
-    template_name = "users/register.html"
+    template_name = "users/create_and_update.html"
     success_url = reverse_lazy("users")
     extra_context = {"title": _("Update user")}
     success_message = _("Successfully updated user.")
