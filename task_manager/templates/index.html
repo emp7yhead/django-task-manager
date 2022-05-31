@@ -3,10 +3,5 @@
 
 {% block header %}{% endblock %}
 {% block content %}
-{% if user.is_authenticated %}
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
-        {% translate 'You are logged in.' %}
-    </div>
-{% endif %}
 <h1>{% translate 'Welcome to TaskManager.' %}</h1>
 {% endblock content %}
