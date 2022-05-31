@@ -1,28 +1,28 @@
 """task_manager URL routes."""
 from django.urls import path
 
-from task_manager.users import views
+from task_manager.statuses import views
 
-app_name = 'users'
+app_name = 'statuses'
 urlpatterns = [
     path(
         '',
-        views.UserListView.as_view(),
-        name='users',
+        views.StatusesListView.as_view(),
+        name='statuses',
     ),
     path(
         'create/',
-        views.RegisterUserView.as_view(),
-        name='registration',
+        views.CreateStatusView.as_view(),
+        name='create',
     ),
     path(
         '<int:pk>/update',
-        views.UpdateUserView.as_view(),
+        views.UpdateStatusView.as_view(),
         name='update',
     ),
     path(
         '<int:pk>/delete/',
-        views.DeleteUserView.as_view(),
+        views.DeleteStatusView.as_view(),
         name='delete',
     ),
 ]
