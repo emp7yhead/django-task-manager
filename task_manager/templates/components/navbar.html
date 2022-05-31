@@ -7,10 +7,8 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarToggle">
     <div class="navbar-nav mr-auto">
-      <a href="{% url 'users:users' %}" class="nav-link" >{% translate 'Users' %}</a> 
-    </div>
-    <div class="navbar-nav mr-auto">
-      <a href="{% url 'statuses:statuses' %}" class="nav-link" >{% translate 'Statuses' %}</a> 
+      <a href="{% url 'users:users' %}" class="nav-link" >{% translate 'Users' %}</a>
+      <a href="{% url 'statuses:statuses' %}" class="nav-link" >{% translate 'Statuses' %}</a>
     </div>
     <div class="navbar-nav">
     {% if user.is_authenticated %}
