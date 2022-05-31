@@ -7,7 +7,10 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarToggle">
     <div class="navbar-nav mr-auto">
-      <a href="{% url 'users' %}" class="nav-link" >{% translate 'Users' %}</a> 
+      <a href="{% url 'users:users' %}" class="nav-link" >{% translate 'Users' %}</a> 
+    </div>
+    <div class="navbar-nav mr-auto">
+      <a href="{% url 'statuses:statuses' %}" class="nav-link" >{% translate 'Statuses' %}</a> 
     </div>
     <div class="navbar-nav">
     {% if user.is_authenticated %}
@@ -15,7 +18,7 @@
       <a href="{% url 'logout' %}" class="btn btn-outline-primary mr-2">{% translate 'Log Out' %}</a>
     {% else %}
       <a href="{% url 'login' %}" class="btn btn-outline-primary mr-2">{% translate 'Log In' %}</a>
-      <a href="{% url 'registration' %}" class="btn btn-primary">{% translate 'Sign Up' %}</a>
+      <a href="{% url 'users:registration' %}" class="btn btn-primary">{% translate 'Sign Up' %}</a>
     {% endif %}
     </div>
   </div>
