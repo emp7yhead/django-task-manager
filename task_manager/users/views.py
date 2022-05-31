@@ -25,7 +25,7 @@ class RegisterUserView(SuccessMessageMixin, generic.CreateView):
     template_name = "users/register.html"
     success_url = reverse_lazy("login")
     extra_context = {"title": _("Register user")}
-    success_message = "Successfully registered user."
+    success_message = _("Successfully registered user.")
 
 
 class UpdateUserView(SuccessMessageMixin, UserCheckMixin, generic.UpdateView):
@@ -36,7 +36,7 @@ class UpdateUserView(SuccessMessageMixin, UserCheckMixin, generic.UpdateView):
     template_name = "users/register.html"
     success_url = reverse_lazy("users")
     extra_context = {"title": _("Update user")}
-    success_message = "Successfully updated user."
+    success_message = _("Successfully updated user.")
 
 
 class DeleteUserView(UserCheckMixin, generic.DeleteView):
@@ -46,4 +46,4 @@ class DeleteUserView(UserCheckMixin, generic.DeleteView):
     template_name = "users/delete.html"
     success_url = reverse_lazy("users")
     extra_context = {"title": _("Delete user")}
-    success_message = "Successfully deleted user."
+    success_message = _("Successfully deleted user.")

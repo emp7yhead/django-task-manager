@@ -21,7 +21,7 @@ class LoginUserView(SuccessMessageMixin, LoginView):
     form_class = AuthenticationForm
     template_name = "login.html"
     extra_context = {"title": _("Login")}
-    success_message = "You're logged in"
+    success_message = _("You're logged in")
 
     def get_success_url(self):
         """Change redirect url."""
@@ -35,5 +35,5 @@ class LogoutUserView(SuccessMessageMixin, LogoutView):
 
     def dispatch(self, request, *args, **kwargs):
         """Log out and show a logout message."""
-        messages.add_message(request, messages.INFO, "You're logged out.")
+        messages.add_message(request, messages.INFO, _("You're logged out."))
         return super().dispatch(request, *args, **kwargs)
