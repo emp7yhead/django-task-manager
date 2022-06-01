@@ -1,33 +1,23 @@
-"""Test for index page view."""
+"""Tests for users app."""
 from http import HTTPStatus
 
 from django.contrib.auth.models import User
 from django.test import TestCase
 from django.urls import reverse_lazy
+from faker import Faker
 
 
-class IndexPageViewTest(TestCase):
-    """Test for index page."""
-
-    def test_page(self):
-        """Tests page that the response to GET is valid."""
-        response = self.client.get('/')
-        self.assertEqual(response.status_code, HTTPStatus.OK)
-
-
-class LoginPageViewTest(TestCase):
-    """Test user signin."""
-
-    fake_user = {
-        'username': 'test',
-        'password': 'random_password1',
-    }
+class LoginUserTest(TestCase):
+    """Test user login."""
 
     def setUp(self):
         """Create test user."""
+        self.faker = Faker()
+        self.username = self.faker.user_name()
+        self.password = self.faker.password(length=10)
         self.user = User.objects.create_user(
-            username=self.fake_user['username'],
-            password=self.fake_user['password'],
+            username=self.username,
+            password=self.password,
         )
         self.user.save()
 
@@ -49,8 +39,8 @@ class LoginPageViewTest(TestCase):
         response = self.client.post(
             '/login/',
             {
-                'username': self.fake_user['username'],
-                'password': self.fake_user['password'],
+                'username': self.username,
+                'password': self.password,
             },
         )
         self.assertEqual(response.status_code, HTTPStatus.FOUND)
@@ -60,7 +50,7 @@ class LoginPageViewTest(TestCase):
             '/login/',
             {
                 'username': 'wrong',
-                'password': self.fake_user['password'],
+                'password': self.password,
             },
         )
         self.assertFalse(response.status_code == HTTPStatus.FOUND)
@@ -69,7 +59,7 @@ class LoginPageViewTest(TestCase):
         response = self.client.post(
             '/login/',
             {
-                'username': self.fake_user['username'],
+                'username': self.username,
                 'password': 'wrong',
             },
         )

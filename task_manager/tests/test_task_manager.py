@@ -1,11 +1,21 @@
-"""Test for user registration."""
+"""Test for task manager."""
 from http import HTTPStatus
 
 from django.contrib.auth.models import User
 from django.test import Client, TestCase
 from django.urls import reverse_lazy
+from faker import Faker
 
 from task_manager.users.forms import RegisterAndUpdateUserForm
+
+
+class IndexPageViewTest(TestCase):
+    """Test for index page."""
+
+    def test_page(self):
+        """Tests page that the response to GET is valid."""
+        response = self.client.get('/')
+        self.assertEqual(response.status_code, HTTPStatus.OK)
 
 
 class RegistrationPageViewTest(TestCase):
@@ -13,12 +23,12 @@ class RegistrationPageViewTest(TestCase):
 
     def setUp(self):
         """Create a test database."""
-        self.client: Client = Client()
+        self.client = Client()
 
     def test(self):
         """Send get request, and check data page assertions."""
         response = self.client.get(
-            reverse_lazy('registration'),
+            reverse_lazy('users:registration'),
         )
         form_fields = RegisterAndUpdateUserForm.base_fields
         self.assertEqual(response.status_code, HTTPStatus.OK)
@@ -82,25 +92,19 @@ class RegistrationPageViewTest(TestCase):
 class SuccessRegistrationTest(TestCase):
     """Test user registration."""
 
-    fake_user = {
-        'first_name': 'name',
-        'last_name': 'surname',
-        'username': 'test',
-        'password': 'random_password1',
-    }
-
     def setUp(self):
         """Create a test database."""
-        self.client: Client = Client()
+        self.faker = Faker()
+        self.client = Client()
 
     def test(self):
         """Send valid registration request."""
-        first_name = self.fake_user['first_name']
-        last_name = self.fake_user['last_name']
-        username = self.fake_user['username']
-        password = self.fake_user['password']
+        first_name = self.faker.first_name()
+        last_name = self.faker.last_name()
+        username = self.faker.user_name()
+        password = self.faker.password()
         response = self.client.post(
-            reverse_lazy('registration'),
+            reverse_lazy('users:registration'),
             data={
                 'first_name': first_name,
                 'last_name': last_name,
