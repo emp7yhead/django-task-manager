@@ -70,7 +70,7 @@ class DeleteStatusView(
             messages.add_message(
                 request,
                 messages.ERROR,
-                "Can't be deleted, has assigned task.",
+                _("Can't be deleted, has assigned task."),
             )
             return redirect(self.get_success_url())
 
