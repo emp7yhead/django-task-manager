@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load i18n crispy_forms_tags %}
+
+{% block header %}{% endblock %}
+{% block content %}
+<h1 class="my-5 text-left">{{ title }}</h1>
+<form class="text-left" method="post">
+    {% csrf_token %}
+    {{ form.name|as_crispy_field }}
+    <button type="submit" class="btn btn-primary">{% translate 'Submit' %}</button>
+</form>
+{% endblock content %}
