@@ -12,15 +12,15 @@
 	      <th scope="col">{% translate 'ID' %}</th>
 	      <th scope="col">{% translate 'Name' %}</th>
 	      <th scope="col">{% translate 'Creation date' %}</th>
-	      <th></th>
+	      <th scope="col"></th>
 	    </tr>
 	  </thead>
 	  <tbody>
 	  	{% for status in statuses %}
 	    <tr>
 	      <th scope="row">{{ status.id }}</th>
-	      <td>{{ status.username }}</td>
-	      <td>{{ status.date_joined }}</td>
+	      <td>{{ status.name }}</td>
+	      <td>{{ status.created_at }}</td>
 	      <td>
 			<a class="btn btn-info btn-sm mr-2" href="{% url 'statuses:update' status.id %}">
 			{% translate 'Update' %}</a>
