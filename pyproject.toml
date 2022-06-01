@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "hexlet-code"
-version = "0.1.0"
+version = "0.5.0"
 description = "Task app"
 authors = ["emp7yhead <artyomkropp@gmail.com>"]
 
@@ -16,6 +16,7 @@ django-crispy-forms = "^1.14.0"
 [tool.poetry.dev-dependencies]
 wemake-python-styleguide = "^0.16.1"
 coverage = "^6.3.2"
+Faker = "^13.12.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
