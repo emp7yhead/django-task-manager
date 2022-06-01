@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-31 12:08+0900\n"
+"POT-Creation-Date: 2022-06-01 23:23+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,57 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: task_manager/statuses/models.py:10
+msgid "name"
+msgstr "Name"
+
+#: task_manager/statuses/models.py:11
+#, fuzzy
+#| msgid "Creation date"
+msgid "creation date"
+msgstr "Creation date"
+
+#: task_manager/statuses/models.py:14
+msgid "status"
+msgstr "Status"
+
+#: task_manager/statuses/models.py:15
+msgid "statuses"
+msgstr "Statuses"
+
+#: task_manager/statuses/views.py:20
+msgid "Statuses list"
+msgstr "Statuses list"
+
+#: task_manager/statuses/views.py:34
+msgid "Create status"
+msgstr "Create status"
+
+#: task_manager/statuses/views.py:35
+msgid "Status successfully created."
+msgstr "Status is successfully created."
+
+#: task_manager/statuses/views.py:49
+msgid "Update status"
+msgstr "Update status"
+
+#: task_manager/statuses/views.py:50
+msgid "Status successfully updated."
+msgstr "Status is successfully updated."
+
+#: task_manager/statuses/views.py:63
+msgid "Status successfully deleted."
+msgstr "Status is successfully deleted."
+
+#: task_manager/statuses/views.py:64
+#: task_manager/templates/statuses/delete.html:6
+msgid "Delete status"
+msgstr "Delete status"
+
+#: task_manager/statuses/views.py:73
+msgid "Can't be deleted, has assigned task."
+msgstr "Status can't be deleted, has assigned task."
 
 #: task_manager/templates/components/navbar.html:4
 msgid "TaskManager"
@@ -27,15 +78,20 @@ msgstr "Task Manager"
 msgid "Users"
 msgstr "Users"
 
-#: task_manager/templates/components/navbar.html:15
+#: task_manager/templates/components/navbar.html:12
+#: task_manager/templates/statuses/statuses_list.html:5
+msgid "Statuses"
+msgstr "Statuses"
+
+#: task_manager/templates/components/navbar.html:18
 msgid "Log Out"
 msgstr "Log Out"
 
-#: task_manager/templates/components/navbar.html:17
+#: task_manager/templates/components/navbar.html:20
 msgid "Log In"
 msgstr "Log In"
 
-#: task_manager/templates/components/navbar.html:18
+#: task_manager/templates/components/navbar.html:21
 msgid "Sign Up"
 msgstr "Sign Up"
 
@@ -68,34 +124,51 @@ msgstr "Enter Password"
 msgid "Login user"
 msgstr "Login"
 
-#: task_manager/templates/users/delete.html:6 task_manager/users/views.py:48
-msgid "Delete user"
-msgstr "Delete user"
+#: task_manager/templates/statuses/create_and_update.html:10
+msgid "Create"
+msgstr "Create"
 
+#: task_manager/templates/users/create_and_update.html:20
+msgid "Submit"
+msgstr "Submit"
+
+#: task_manager/templates/statuses/delete.html:10
+#: task_manager/templates/statuses/statuses_list.html:28
 #: task_manager/templates/users/delete.html:10
 #: task_manager/templates/users/users_list.html:28
 msgid "Delete"
 msgstr "Delete"
 
-#: task_manager/templates/users/register.html:20
-msgid "Submit"
-msgstr "Submit"
+#: task_manager/templates/statuses/statuses_list.html:7
+msgid "Create new status"
+msgstr "Create new status"
 
+#: task_manager/templates/statuses/statuses_list.html:12
 #: task_manager/templates/users/users_list.html:10
 msgid "ID"
 msgstr "ID"
 
-#: task_manager/templates/users/users_list.html:12
-msgid "Full name"
-msgstr "Full name"
+#: task_manager/templates/statuses/statuses_list.html:13
+msgid "Name"
+msgstr "Name"
 
+#: task_manager/templates/statuses/statuses_list.html:14
 #: task_manager/templates/users/users_list.html:13
 msgid "Creation date"
 msgstr "Creation date"
 
+#: task_manager/templates/statuses/statuses_list.html:26
 #: task_manager/templates/users/users_list.html:26
 msgid "Update"
 msgstr "Update"
+
+#: task_manager/templates/users/delete.html:6 task_manager/users/views.py:48
+msgid "Delete user"
+msgstr "Delete user"
+
+#: task_manager/templates/users/users_list.html:12
+msgid "Full name"
+msgstr "Full name"
 
 #: task_manager/users/mixins.py:20
 msgid "You don't have permission to change another user."
