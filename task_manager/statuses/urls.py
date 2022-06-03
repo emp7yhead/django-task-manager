@@ -1,4 +1,4 @@
-"""task_manager URL routes."""
+"""task_manager.statuses URL routes."""
 from django.urls import path
 
 from task_manager.statuses import views
