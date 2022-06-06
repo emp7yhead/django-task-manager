@@ -34,7 +34,7 @@ class UpdateUserView(SuccessMessageMixin, UserCheckMixin, generic.UpdateView):
     model = User
     form_class = RegisterAndUpdateUserForm
     template_name = "users/create_and_update.html"
-    success_url = reverse_lazy("users")
+    success_url = reverse_lazy("users:users")
     extra_context = {"title": _("Update user")}
     success_message = _("Successfully updated user.")
 
@@ -44,6 +44,6 @@ class DeleteUserView(UserCheckMixin, generic.DeleteView):
 
     model = User
     template_name = "users/delete.html"
-    success_url = reverse_lazy("users")
+    success_url = reverse_lazy("users:users")
     extra_context = {"title": _("Delete user")}
     success_message = _("Successfully deleted user.")
