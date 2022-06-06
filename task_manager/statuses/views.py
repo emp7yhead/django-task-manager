@@ -7,8 +7,8 @@ from django.urls import reverse_lazy
 from django.utils.translation import gettext as _
 from django.views import generic
 
-from .forms import CreateAndUpdateStatusForm
-from .models import Status
+from task_manager.statuses.forms import CreateAndUpdateStatusForm
+from task_manager.statuses.models import Status
 
 
 class StatusesListView(LoginRequiredMixin, generic.ListView):
