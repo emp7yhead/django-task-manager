@@ -1,5 +1,5 @@
 """Views for task manager users."""
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy
 from django.utils.translation import gettext as _
@@ -7,6 +7,8 @@ from django.views import generic
 
 from task_manager.users.forms import RegisterAndUpdateUserForm
 from task_manager.users.mixins import UserCheckMixin
+
+User = get_user_model()
 
 
 class UserListView(generic.ListView):
