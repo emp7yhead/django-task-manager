@@ -2,6 +2,8 @@
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
+from django.db.models import ProtectedError
+from django.http import HttpResponseRedirect
 from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.utils.translation import gettext as _
@@ -63,15 +65,18 @@ class DeleteStatusView(
     success_message = _('Status successfully deleted.')
     extra_context = {'title': _('Delete status')}
 
-    def delete(self, request, *args, **kwargs):
-        """Delete object except status is currently used by task."""
-        status = self.get_object()
-        if status.chidlren.count() > 0:
-            messages.add_message(
-                request,
-                messages.ERROR,
-                _("Can't be deleted, has assigned task."),
+    def form_valid(self, form):
+        """Check if status is used by task."""
+        try:
+            self.object.delete()
+        except ProtectedError:
+            messages.error(
+                self.request,
+                _('Status is used by task'),
             )
-            return redirect(self.get_success_url())
-
-        return super().delete(request, *args, **kwargs)
+        else:
+            messages.success(
+                self.request,
+                _("Successfully deleted status."),
+            )
+        return HttpResponseRedirect(self.success_url)
