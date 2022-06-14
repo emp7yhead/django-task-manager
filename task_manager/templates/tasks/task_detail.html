@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load i18n crispy_forms_tags %}
+
+{% block header %}{% endblock %}
+{% block content %}
+<h1 class="my-4 text-left">{% translate 'View Task' %}</h1>
+<div class="card bg-light">
+  <div class="card-header h3">{{ object.name }}</div>
+    <div class="card-body">
+        <h4 class="card-title"> {% translate 'Description' %}:</h4>
+        <h5 class="card-title">{{ object.description}}</h5>
+        <table class="table">
+            <tbody>
+              <tr>
+                <th scope="col">{% translate 'Author' %}:</th>
+                <td scope="col">{{object.author}}</td>
+              </tr>
+              <tr>
+                <th scope="col">{% translate 'Executor' %}:</th>
+                <td scope="col">{{object.executor}}</td>
+              </tr>
+              <tr>
+                <th scope="col">{% translate 'Status' %}:</th>
+                <td scope="col">{{object.status}}</td>
+              </tr>
+              <tr>
+                <td scope="col" colspan="2">
+                    <a class="btn btn-info btn-sm mr-2" href="{% url 'tasks:update' task.id %}">
+                    {% translate 'Update' %}</a> 
+                    <a class="btn btn-danger btn-sm" href="{% url 'tasks:delete' task.id %}">
+                        {% translate 'Delete' %}</a>
+                </td>
+              </tr>
+            </tbody>
+        </table>  
+
+        <div class="card-footer">
+            <small class="text-muted">{% translate 'Created' %}: {{object.created_at}}</small>
+        </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}
