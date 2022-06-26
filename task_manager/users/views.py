@@ -18,19 +18,30 @@ class UserListView(generic.ListView):
     """Define view for users list page."""
 
     model = User
-    template_name = "users/users_list.html"
-    context_object_name = "users"
-    extra_context = {"title": _("Users list")}
+    template_name = 'users/users_list.html'
+    context_object_name = 'users'
+
+    def get_context_data(self, **kwargs):
+        """Define the title."""
+        context = super().get_context_data(**kwargs)
+        context['title'] = _('Users list')
+        return context
 
 
 class RegisterUserView(SuccessMessageMixin, generic.CreateView):
     """Define view for registration page."""
 
     form_class = RegisterAndUpdateUserForm
-    template_name = "users/create_and_update.html"
-    success_url = reverse_lazy("login")
-    extra_context = {"title": _("Register user")}
-    success_message = _("Successfully registered user.")
+    template_name = 'form.html'
+    success_url = reverse_lazy('login')
+    success_message = _('Successfully registered user.')
+
+    def get_context_data(self, **kwargs):
+        """Define the title and button text."""
+        context = super().get_context_data(**kwargs)
+        context['title'] = _('Register user')
+        context['button'] = _('Register')
+        return context
 
 
 class UpdateUserView(SuccessMessageMixin, UserCheckMixin, generic.UpdateView):
@@ -38,10 +49,16 @@ class UpdateUserView(SuccessMessageMixin, UserCheckMixin, generic.UpdateView):
 
     model = User
     form_class = RegisterAndUpdateUserForm
-    template_name = "users/create_and_update.html"
-    success_url = reverse_lazy("users:users")
-    extra_context = {"title": _("Update user")}
-    success_message = _("Successfully updated user.")
+    template_name = 'form.html'
+    success_url = reverse_lazy('users:users')
+    success_message = _('Successfully updated user.')
+
+    def get_context_data(self, **kwargs):
+        """Define the title and button text."""
+        context = super().get_context_data(**kwargs)
+        context['title'] = _('Update user')
+        context['button'] = _('Update')
+        return context
 
 
 class DeleteUserView(UserCheckMixin, generic.DeleteView):
@@ -50,7 +67,6 @@ class DeleteUserView(UserCheckMixin, generic.DeleteView):
     model = User
     template_name = "delete.html"
     success_url = reverse_lazy("users:users")
-    extra_context = {"title": _("Delete user")}
 
     def form_valid(self, form):
         """Check if user has assigned task."""
@@ -67,3 +83,9 @@ class DeleteUserView(UserCheckMixin, generic.DeleteView):
                 _("Successfully deleted user."),
             )
         return HttpResponseRedirect(self.success_url)
+
+    def get_context_data(self, **kwargs):
+        """Define the title."""
+        context = super().get_context_data(**kwargs)
+        context['title'] = _('Delete user')
+        return context

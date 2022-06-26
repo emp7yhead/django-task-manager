@@ -4,7 +4,6 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from django.db.models import ProtectedError
 from django.http import HttpResponseRedirect
-from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.utils.translation import gettext as _
 from django.views import generic
@@ -19,7 +18,12 @@ class StatusesListView(LoginRequiredMixin, generic.ListView):
     model = Status
     template_name = 'statuses/statuses_list.html'
     context_object_name = 'statuses'
-    extra_context = {'title': _('Statuses list')}
+
+    def get_context_data(self, **kwargs):
+        """Define the title and button text."""
+        context = super().get_context_data(**kwargs)
+        context['title'] = _('Statuses list')
+        return context  
 
 
 class CreateStatusView(
@@ -31,10 +35,16 @@ class CreateStatusView(
 
     model = Status
     form_class = CreateAndUpdateStatusForm
-    template_name = 'statuses/create_and_update.html'
+    template_name = 'form.html'
     success_url = reverse_lazy('statuses:statuses')
-    extra_context = {'title': _('Create status')}
     success_message = _('Status successfully created.')
+
+    def get_context_data(self, **kwargs):
+        """Define the title and button text."""
+        context = super().get_context_data(**kwargs)
+        context['title'] = _('Create status')
+        context['button'] = _('Create')
+        return context
 
 
 class UpdateStatusView(
@@ -46,10 +56,16 @@ class UpdateStatusView(
 
     model = Status
     form_class = CreateAndUpdateStatusForm
-    template_name = 'statuses/create_and_update.html'
+    template_name = 'form.html'
     success_url = reverse_lazy('statuses:statuses')
-    extra_context = {'title': _('Update status')}
     success_message = _('Status successfully updated.')
+
+    def get_context_data(self, **kwargs):
+        """Define the title and button text."""
+        context = super().get_context_data(**kwargs)
+        context['title'] = _('Update status')
+        context['button'] = _('Update')
+        return context
 
 
 class DeleteStatusView(
@@ -63,7 +79,6 @@ class DeleteStatusView(
     template_name = 'delete.html'
     success_url = reverse_lazy('statuses:statuses')
     success_message = _('Status successfully deleted.')
-    extra_context = {'title': _('Delete status')}
 
     def form_valid(self, form):
         """Check if status is used by task."""
@@ -80,3 +95,9 @@ class DeleteStatusView(
                 _("Successfully deleted status."),
             )
         return HttpResponseRedirect(self.success_url)
+
+    def get_context_data(self, **kwargs):
+        """Define the title and button text."""
+        context = super().get_context_data(**kwargs)
+        context['title'] = _('Delete status')
+        return context

@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load i18n crispy_forms_tags %}
+{% load i18n %}
 
 {% block header %}{% endblock %}
 {% block content %}
@@ -12,19 +12,19 @@
         <table class="table">
             <tbody>
               <tr>
-                <th scope="col">{% translate 'Author' %}:</th>
+                <th scope="col" class="text-right">{% translate 'Author' %}:</th>
                 <td scope="col">{{object.author}}</td>
               </tr>
               <tr>
-                <th scope="col">{% translate 'Executor' %}:</th>
+                <th scope="col" class="text-right">{% translate 'Executor' %}:</th>
                 <td scope="col">{{object.executor}}</td>
               </tr>
               <tr>
-                <th scope="col">{% translate 'Status' %}:</th>
+                <th scope="col" class="text-right">{% translate 'Status' %}:</th>
                 <td scope="col">{{object.status}}</td>
               </tr>
               <tr>
-                <td scope="col" colspan="2">
+                <td scope="col" colspan="2" class="text-center">
                     <a class="btn btn-info btn-sm mr-2" href="{% url 'tasks:update' task.id %}">
                     {% translate 'Update' %}</a> 
                     <a class="btn btn-danger btn-sm" href="{% url 'tasks:delete' task.id %}">

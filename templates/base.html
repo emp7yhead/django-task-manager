@@ -1,0 +1,25 @@
+{% load i18n bootstrap4 %}
+{% get_current_language as LANGUAGE_CODE %}
+
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+
+<!doctype html>
+<html lang="{{ LANGUAGE_CODE }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Fourth and last project for Hexlet.io">
+    <title>{{ title }}</title>
+  </head>
+  <body class="text-center">
+    <header>
+      {% include 'components/navbar.html' %}
+    </header>
+    <main class="container my-5">
+      {% include 'components/messages.html' %}
+      {% block additional %}{% endblock %}
+      {% block content %}{% endblock %}
+    </main>
+  </body>
+</html>

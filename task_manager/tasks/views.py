@@ -19,6 +19,12 @@ class TasksListView(LoginRequiredMixin, generic.ListView):
     context_object_name = 'tasks'
     extra_context = {'title': _('Tasks list')}
 
+    def get_context_data(self, **kwargs):
+        """Define the title and button text."""
+        context = super().get_context_data(**kwargs)
+        context['title'] = _('Tasks list')
+        return context
+
 
 class CreateTaskView(
     LoginRequiredMixin,
@@ -29,9 +35,8 @@ class CreateTaskView(
 
     model = Task
     form_class = CreateAndUpdateTaskForm
-    template_name = 'tasks/create_and_update.html'
+    template_name = 'form.html'
     success_url = reverse_lazy('tasks:tasks')
-    extra_context = {'title': _('Create task')}
     success_message = _('Task successfully created.')
 
     def form_valid(self, form):
@@ -39,6 +44,13 @@ class CreateTaskView(
         self.object = form.save(commit=False)
         self.object.author = self.request.user
         return super().form_valid(form)
+
+    def get_context_data(self, **kwargs):
+        """Define the title and button text."""
+        context = super().get_context_data(**kwargs)
+        context['title'] = _('Create task')
+        context['button'] = _('Create')
+        return context
 
 
 class UpdateTaskView(
@@ -50,10 +62,16 @@ class UpdateTaskView(
 
     model = Task
     form_class = CreateAndUpdateTaskForm
-    template_name = 'tasks/create_and_update.html'
+    template_name = 'form.html'
     success_url = reverse_lazy('tasks:tasks')
-    extra_context = {'title': _('Update task')}
     success_message = _('Task successfully updated.')
+
+    def get_context_data(self, **kwargs):
+        """Define the title and button text."""
+        context = super().get_context_data(**kwargs)
+        context['title'] = _('Update task')
+        context['button'] = _('Update')
+        return context
 
 
 class DetailedTaskView(
@@ -78,9 +96,6 @@ class DeleteTaskView(
     template_name = 'delete.html'
     success_url = reverse_lazy('tasks:tasks')
     success_message = _('Task successfully deleted.')
-    extra_context = {
-        'title': _('Delete task'),
-    }
 
     def form_valid(self, form):
         """Check if the current user is a task creator."""
@@ -93,3 +108,9 @@ class DeleteTaskView(
                 _('Task can be deleted only by author.'),
             )
         return redirect(self.success_url)
+
+    def get_context_data(self, **kwargs):
+        """Define the title."""
+        context = super().get_context_data(**kwargs)
+        context['title'] = _('Delete task')
+        return context

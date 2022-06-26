@@ -12,20 +12,31 @@ class IndexView(generic.TemplateView):
     """Define view for index page."""
 
     template_name = 'index.html'
-    extra_context = {'title': _('Task Manager')}
+
+    def get_context_data(self, **kwargs):
+        """Define the title."""
+        context = super().get_context_data(**kwargs)
+        context['title'] = _('Task Manager')
+        return context
 
 
 class LoginUserView(SuccessMessageMixin, LoginView):
     """Define view for login page."""
 
     form_class = AuthenticationForm
-    template_name = 'login.html'
-    extra_context = {'title': _('Login')}
+    template_name = 'form.html'
     success_message = _("You're logged in")
 
     def get_success_url(self):
         """Change redirect url."""
         return reverse_lazy('index')
+
+    def get_context_data(self, **kwargs):
+        """Define the title and button text."""
+        context = super().get_context_data(**kwargs)
+        context['title'] = _('Login')
+        context['button'] = _('Login user')
+        return context
 
 
 class LogoutUserView(SuccessMessageMixin, LogoutView):
