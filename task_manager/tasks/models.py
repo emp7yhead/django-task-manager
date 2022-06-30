@@ -2,8 +2,8 @@
 from django.contrib.auth import get_user_model
 from django.db import models
 from django.utils.translation import gettext as _
-from task_manager.labels.models import Label
 
+from task_manager.labels.models import Label
 from task_manager.statuses.models import Status
 
 MAX_LENGTH = 50
@@ -40,7 +40,8 @@ class Task(models.Model):
     )
     label = models.ManyToManyField(
         Label,
-        through_fields=('task', 'label'),
+        related_name='labels',
+        blank=True,
     )
 
     class Meta:
