@@ -11,6 +11,7 @@
       {% if user.is_authenticated %}
         <a href="{% url 'statuses:statuses' %}" class="nav-link" >{% translate 'Statuses' %}</a>
         <a href="{% url 'tasks:tasks' %}" class="nav-link" >{% translate 'Tasks' %}</a>
+        <a href="{% url 'labels:labels' %}" class="nav-link" >{% translate 'Labels' %}</a>
       {% endif %}
     </div>
     <div class="navbar-nav">
