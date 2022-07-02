@@ -23,7 +23,7 @@ class StatusesListView(LoginRequiredMixin, generic.ListView):
         """Define the title and button text."""
         context = super().get_context_data(**kwargs)
         context['title'] = _('Statuses list')
-        return context  
+        return context
 
 
 class CreateStatusView(
