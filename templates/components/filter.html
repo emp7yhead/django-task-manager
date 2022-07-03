@@ -1,0 +1,11 @@
+{% load bootstrap4 %}
+
+<div class="card mb-3">
+    <div class="card-body bg-light">
+        <form class="text-left" method="get">
+            {% csrf_token %}
+            {% bootstrap_form filter.form layout="horizontal" form_group_class="row mb-2" %}
+            {% bootstrap_button button button_type="submit" button_class="btn btn-primary"%}
+        </form>
+    </div>
+</div>
