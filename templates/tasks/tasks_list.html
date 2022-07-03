@@ -6,6 +6,9 @@
 	<a class="btn btn-primary btn-block mb-3" href="{% url 'tasks:create' %}">
 		{% translate 'Create new task' %}
 	</a>
+	<a>
+		{% include 'components/filter.html' %}
+	</a>
     <table class="table">
 	  <thead class="thead-dark">
 	    <tr>
