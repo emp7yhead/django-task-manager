@@ -6,23 +6,25 @@ from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.utils.translation import gettext as _
 from django.views import generic
+from django_filters.views import FilterView
 
+from task_manager.tasks.filters import TaskFilter
 from task_manager.tasks.forms import CreateAndUpdateTaskForm
 from task_manager.tasks.models import Task
 
 
-class TasksListView(LoginRequiredMixin, generic.ListView):
+class TasksListView(LoginRequiredMixin, FilterView):
     """Define view for tasks list page."""
 
-    model = Task
+    filterset_class = TaskFilter
     template_name = 'tasks/tasks_list.html'
     context_object_name = 'tasks'
-    extra_context = {'title': _('Tasks list')}
 
     def get_context_data(self, **kwargs):
         """Define the title and button text."""
         context = super().get_context_data(**kwargs)
         context['title'] = _('Tasks list')
+        context['button'] = _('Show')
         return context
 
 
