@@ -1,8 +1,11 @@
 [tool.poetry]
 name = "hexlet-code"
-version = "0.5.0"
-description = "Task app"
+version = "0.9.0"
+description = "Web app for organizing tasks between people."
 authors = ["emp7yhead <artyomkropp@gmail.com>"]
+packages = [
+    { include = "task_manager" },
+    ]
 
 [tool.poetry.dependencies]
 python = "^3.10"
