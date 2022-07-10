@@ -8,6 +8,7 @@ import rollbar
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+CONN_MAX_AGE = 600
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 DEBUG = os.getenv('DEBUG')
@@ -73,7 +74,7 @@ DATABASES = {
     },
 }
 if not DEBUG:
-    DATABASES["default"] = dj_database_url.config(conn_max_age=600)
+    DATABASES["default"] = dj_database_url.config(conn_max_age=CONN_MAX_AGE)
 
 
 # Password validation
