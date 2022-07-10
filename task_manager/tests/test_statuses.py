@@ -1,4 +1,4 @@
-"""Tests forStatuss app."""
+"""Tests for statuses app."""
 from http import HTTPStatus
 
 from django.contrib.auth import get_user_model
