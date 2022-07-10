@@ -31,7 +31,7 @@ class Task(models.Model):
     executor = models.ForeignKey(
         User,
         on_delete=models.PROTECT,
-        blank=False,
+        blank=True,
         related_name='executor',
     )
     created_at = models.DateTimeField(
