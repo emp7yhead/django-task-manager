@@ -12,10 +12,10 @@ User = get_user_model()
 
 
 class LabelsTest(TestCase):
-    """Test user login."""
+    """Test labels."""
 
     def setUp(self):
-        """Create test user."""
+        """Create test user and label."""
         self.faker = Faker()
         self.username = self.faker.user_name()
         self.password = self.faker.password(length=10)

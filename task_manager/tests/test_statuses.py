@@ -12,10 +12,10 @@ User = get_user_model()
 
 
 class StatusesTest(TestCase):
-    """Test user login."""
+    """Test statuses."""
 
     def setUp(self):
-        """Create test user."""
+        """Create test user and status."""
         self.faker = Faker()
         self.username = self.faker.user_name()
         self.password = self.faker.password(length=10)
@@ -36,7 +36,7 @@ class StatusesTest(TestCase):
         self.status.delete()
 
     def test(self):
-        """Tests forStatuss."""
+        """Tests for statuses."""
         self.client.force_login(self.user)
         response = self.client.get(
             reverse_lazy('statuses:statuses'),
