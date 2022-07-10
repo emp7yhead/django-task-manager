@@ -1,12 +1,14 @@
 """Test for task manager."""
 from http import HTTPStatus
 
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 from django.test import Client, TestCase
 from django.urls import reverse_lazy
 from faker import Faker
 
 from task_manager.users.forms import RegisterAndUpdateUserForm
+
+User = get_user_model()
 
 
 class IndexPageViewTest(TestCase):
