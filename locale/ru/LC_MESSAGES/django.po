@@ -232,7 +232,7 @@ msgstr "Страница входа"
 
 #: task_manager/views.py:38
 msgid "Login user"
-msgstr "Вход"
+msgstr "Войти"
 
 #: task_manager/views.py:49
 msgid "You're logged out."
