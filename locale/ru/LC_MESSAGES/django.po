@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-06 00:24+0900\n"
+"POT-Creation-Date: 2022-07-12 18:13+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -52,11 +52,11 @@ msgstr "Создать"
 
 #: task_manager/labels/views.py:59
 msgid "Label successfully updated."
-msgstr "Метка успешно обновлена."
+msgstr "Метка успешно изменена"
 
 #: task_manager/labels/views.py:64
 msgid "Update label"
-msgstr "Обновить метку"
+msgstr "Измение метки"
 
 #: task_manager/labels/views.py:65 task_manager/statuses/views.py:67
 #: task_manager/tasks/views.py:75 task_manager/users/views.py:60
@@ -100,11 +100,11 @@ msgstr "Создать статус"
 
 #: task_manager/statuses/views.py:61
 msgid "Status successfully updated."
-msgstr "Статус успешно обновлен."
+msgstr "Статус успешно изменен"
 
 #: task_manager/statuses/views.py:66
 msgid "Update status"
-msgstr "Обновить статус."
+msgstr "Изменение статуса"
 
 #: task_manager/statuses/views.py:81
 msgid "Status successfully deleted."
@@ -122,13 +122,23 @@ msgstr "Статус успешно удален."
 msgid "Delete status"
 msgstr "Удалить статус"
 
-#: task_manager/tasks/filters.py:17
+#: task_manager/tasks/filters.py:20 templates/tasks/task_detail.html:23
+#: templates/tasks/tasks_list.html:17
+msgid "Status"
+msgstr "Статус"
+
+#: task_manager/tasks/filters.py:25 templates/tasks/task_detail.html:19
+#: templates/tasks/tasks_list.html:19
+msgid "Executor"
+msgstr "Исполнитель"
+
+#: task_manager/tasks/filters.py:28
 msgid "Label"
 msgstr "Метка"
 
-#: task_manager/tasks/filters.py:20
+#: task_manager/tasks/filters.py:31
 msgid "Current user tasks"
-msgstr "Задачи текущего пользователя"
+msgstr "Только свои задачи"
 
 #: task_manager/tasks/models.py:48
 msgid "task"
@@ -156,11 +166,11 @@ msgstr "Создать задачу"
 
 #: task_manager/tasks/views.py:69
 msgid "Task successfully updated."
-msgstr "Задача успешно обновлена."
+msgstr "Задача успешно изменена."
 
 #: task_manager/tasks/views.py:74
 msgid "Update task"
-msgstr "Обновить задачу"
+msgstr "Изменение задачи"
 
 #: task_manager/tasks/views.py:100
 msgid "Task successfully deleted."
@@ -196,15 +206,15 @@ msgstr "Регистрация"
 
 #: task_manager/users/views.py:43
 msgid "Register"
-msgstr "Регистрация"
+msgstr "Зарегистрировать"
 
 #: task_manager/users/views.py:54
 msgid "Successfully updated user."
-msgstr "Данные пользователя успешно обновлены."
+msgstr "Пользователь успешно изменён"
 
 #: task_manager/users/views.py:59
 msgid "Update user"
-msgstr "Обновить данные"
+msgstr "Изменение пользователя"
 
 #: task_manager/users/views.py:78
 msgid "User has assigned task"
@@ -224,7 +234,7 @@ msgstr "Менеджер задач"
 
 #: task_manager/views.py:28
 msgid "You're logged in"
-msgstr "Вход выполнен."
+msgstr "Вы залогинены"
 
 #: task_manager/views.py:37
 msgid "Login"
@@ -236,7 +246,7 @@ msgstr "Войти"
 
 #: task_manager/views.py:49
 msgid "You're logged out."
-msgstr "Вы разлогинены."
+msgstr "Вы разлогинены"
 
 #: templates/components/navbar.html:4
 msgid "TaskManager"
@@ -271,12 +281,13 @@ msgstr "Вход"
 msgid "Sign Up"
 msgstr "Регистрация"
 
-#: templates/delete.html:6 templates/delete.html:16
-#: templates/labels/labels_list.html:28
-#: templates/statuses/statuses_list.html:28 templates/tasks/task_detail.html:39
-#: templates/tasks/tasks_list.html:41 templates/users/users_list.html:28
-msgid "Delete"
-msgstr "Удалить"
+#: templates/delete.html:8
+msgid "Are you sure you want to delete"
+msgstr "Вы уверены, что хотите удалить"
+
+#: templates/delete.html:16
+msgid "Yes, delete"
+msgstr "Да, удалить"
 
 #: templates/index.html:6
 msgid "Welcome to TaskManager."
@@ -303,9 +314,15 @@ msgstr "Имя"
 msgid "Creation date"
 msgstr "Дата создания"
 
+#: templates/labels/labels_list.html:28
+#: templates/statuses/statuses_list.html:28 templates/tasks/task_detail.html:39
+#: templates/tasks/tasks_list.html:41 templates/users/users_list.html:28
+msgid "Delete"
+msgstr "Удалить"
+
 #: templates/statuses/statuses_list.html:7
 msgid "Create new status"
-msgstr "Создать новый статус"
+msgstr "Создать статус"
 
 #: templates/tasks/task_detail.html:6
 msgid "View Task"
@@ -318,14 +335,6 @@ msgstr "Описание"
 #: templates/tasks/task_detail.html:15 templates/tasks/tasks_list.html:18
 msgid "Author"
 msgstr "Автор"
-
-#: templates/tasks/task_detail.html:19 templates/tasks/tasks_list.html:19
-msgid "Executor"
-msgstr "Исполнитель"
-
-#: templates/tasks/task_detail.html:23 templates/tasks/tasks_list.html:17
-msgid "Status"
-msgstr "Статусы"
 
 #: templates/tasks/task_detail.html:46
 msgid "Created"
@@ -342,6 +351,11 @@ msgstr "Имя пользователя"
 #: templates/users/users_list.html:12
 msgid "Full name"
 msgstr "Полное имя"
+
+#, fuzzy
+#~| msgid "Executor"
+#~ msgid "executor"
+#~ msgstr "Исполнитель"
 
 #~ msgid "Your username and password didn't match. Please try again."
 #~ msgstr "Ваше имя пользователя и пароль не совпадают. Попробуйте снова."
