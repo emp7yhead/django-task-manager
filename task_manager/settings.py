@@ -8,11 +8,11 @@ import rollbar
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-DEBUG = os.getenv('DEBUG', 'true').lower()
 CONN_MAX_AGE = 600
 SECRET_KEY = os.getenv('SECRET_KEY')
 
-DEBUG = os.getenv('DEBUG')
+DEBUG = os.getenv('DEBUG', 'true').lower()
+
 
 ALLOWED_HOSTS = [
     'localhost',
