@@ -16,7 +16,7 @@ urlpatterns = [
         name='registration',
     ),
     path(
-        '<int:pk>/update',
+        '<int:pk>/update/',
         views.UpdateUserView.as_view(),
         name='update',
     ),
