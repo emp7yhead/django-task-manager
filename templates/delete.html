@@ -1,18 +1,18 @@
 {% extends 'base.html' %}
-{% load i18n custom_filter %}
+{% load i18n %}
 
 {% block header %}{% endblock %}
 {% block content %}
-<h1 class="my-3 text-left">{% translate 'Delete' %} {{ object|get_verbose_name }}</h1>
+<h1 class="my-3 text-left">{{ title }}</h1>
 <form class="text-left" method="post">{% csrf_token %}
-    <p>Are you sure you want to delete {{ object|get_verbose_name }} 
+    <p>{% translate 'Are you sure you want to delete'%}
         {% if object.name %}
             '{{ object.name }}'
         {% else %}
             {{ object.first_name }} {{ object.last_name }}
-        {% endif %}?
+        {% endif %} ?
     </p>
     {{ form }}
-    <button type="submit" class="btn btn-danger" value="Confirm">{% translate 'Delete' %}</button>
+    <button type="submit" class="btn btn-danger" value="Confirm">{% translate 'Yes, delete' %}</button>
 </form>
 {% endblock content %}
