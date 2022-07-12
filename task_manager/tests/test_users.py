@@ -2,7 +2,7 @@
 from http import HTTPStatus
 
 from django.contrib.auth import get_user_model
-from django.test import TestCase
+from django.test import Client, TestCase
 from django.urls import reverse_lazy
 from faker import Faker
 
@@ -14,6 +14,7 @@ class LoginUserTest(TestCase):
 
     def setUp(self):
         """Create test user."""
+        self.client = Client()
         self.faker = Faker()
         self.username = self.faker.user_name()
         self.password = self.faker.password(length=10)
