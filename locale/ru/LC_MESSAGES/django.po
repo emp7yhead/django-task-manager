@@ -108,7 +108,7 @@ msgstr "Изменение статуса"
 
 #: task_manager/statuses/views.py:81
 msgid "Status successfully deleted."
-msgstr "Статус успешно удален"
+msgstr "Статус успешно удалён"
 
 #: task_manager/statuses/views.py:90
 msgid "Status is used by task"
@@ -116,7 +116,7 @@ msgstr "Статус используется в задаче"
 
 #: task_manager/statuses/views.py:95
 msgid "Successfully deleted status."
-msgstr "Статус успешно удален."
+msgstr "Статус успешно удалён"
 
 #: task_manager/statuses/views.py:102
 msgid "Delete status"
@@ -222,7 +222,7 @@ msgstr "У пользователя имеются задачи"
 
 #: task_manager/users/views.py:83
 msgid "Successfully deleted user."
-msgstr "Пользователь успешно удален"
+msgstr "Пользователь успешно удалён"
 
 #: task_manager/users/views.py:90
 msgid "Delete user"
