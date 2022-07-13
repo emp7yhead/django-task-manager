@@ -44,7 +44,7 @@ class Task(models.Model):
         _('creation date'),
         auto_now_add=True,
     )
-    label = models.ManyToManyField(
+    labels = models.ManyToManyField(
         Label,
         verbose_name=_('labels'),
         blank=True,

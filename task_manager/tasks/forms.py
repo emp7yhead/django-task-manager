@@ -12,6 +12,6 @@ class CreateAndUpdateTaskForm(ModelForm):
             'name',
             'description',
             'status',
-            'label',
+            'labels',
             'executor',
         )
