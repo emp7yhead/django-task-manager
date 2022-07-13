@@ -17,7 +17,7 @@ class TaskFilter(FilterSet):
     """Define filers for tasks list."""
 
     statuses_query = Status.objects.values_list('id', 'name')
-    statuses = ChoiceFilter(label=_('Status'), choices=statuses_query)
+    status = ChoiceFilter(label=_('Status'), choices=statuses_query)
 
     executors_query = User.objects.values_list(
         'id', Concat('first_name', Value(' '), 'last_name'),
@@ -42,7 +42,7 @@ class TaskFilter(FilterSet):
     class Meta:
         model = Task
         fields = [
-            'statuses',
+            'status',
             'executors',
             'labels',
         ]
