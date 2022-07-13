@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-13 09:03+0000\n"
+"POT-Creation-Date: 2022-07-13 10:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,11 +21,12 @@ msgstr ""
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
 #: task_manager/labels/models.py:13 task_manager/statuses/models.py:10
+#: task_manager/tasks/models.py:18
 msgid "name"
 msgstr "Имя"
 
 #: task_manager/labels/models.py:18 task_manager/statuses/models.py:11
-#: task_manager/tasks/models.py:38
+#: task_manager/tasks/models.py:41
 msgid "creation date"
 msgstr "Дата создания"
 
@@ -140,11 +141,15 @@ msgstr "Метка"
 msgid "Current user tasks"
 msgstr "Только свои задачи"
 
-#: task_manager/tasks/models.py:48
+#: task_manager/tasks/models.py:21 templates/tasks/task_detail.html:10
+msgid "Description"
+msgstr "Описание"
+
+#: task_manager/tasks/models.py:51
 msgid "task"
 msgstr "задача"
 
-#: task_manager/tasks/models.py:49
+#: task_manager/tasks/models.py:52
 msgid "tasks"
 msgstr "задачи"
 
@@ -327,10 +332,6 @@ msgstr "Создать статус"
 #: templates/tasks/task_detail.html:6
 msgid "View Task"
 msgstr "Подробнее о задаче"
-
-#: templates/tasks/task_detail.html:10
-msgid "Description"
-msgstr "Описание"
 
 #: templates/tasks/task_detail.html:15 templates/tasks/tasks_list.html:18
 msgid "Author"

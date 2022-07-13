@@ -14,8 +14,11 @@ User = get_user_model()
 class Task(models.Model):
     """Model representing task."""
 
-    name = models.CharField(max_length=MAX_LENGTH)
-    description = models.TextField()
+    name = models.CharField(
+        _('name'),
+        max_length=MAX_LENGTH,
+    )
+    description = models.TextField(_('Description'))
     author = models.ForeignKey(
         User,
         on_delete=models.PROTECT,
