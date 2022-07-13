@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-13 10:54+0000\n"
+"POT-Creation-Date: 2022-07-13 11:06+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,7 +26,7 @@ msgid "name"
 msgstr "Имя"
 
 #: task_manager/labels/models.py:18 task_manager/statuses/models.py:11
-#: task_manager/tasks/models.py:41
+#: task_manager/tasks/models.py:44
 msgid "creation date"
 msgstr "Дата создания"
 
@@ -34,7 +34,7 @@ msgstr "Дата создания"
 msgid "label"
 msgstr "метка"
 
-#: task_manager/labels/models.py:24
+#: task_manager/labels/models.py:24 task_manager/tasks/models.py:50
 msgid "labels"
 msgstr "метки"
 
@@ -79,7 +79,7 @@ msgstr "Метка успешно удалена"
 msgid "Delete label"
 msgstr "Удалить метку"
 
-#: task_manager/statuses/models.py:14
+#: task_manager/statuses/models.py:14 task_manager/tasks/models.py:34
 msgid "status"
 msgstr "Статус"
 
@@ -128,8 +128,8 @@ msgstr "Удалить статус"
 msgid "Status"
 msgstr "Статус"
 
-#: task_manager/tasks/filters.py:25 templates/tasks/task_detail.html:19
-#: templates/tasks/tasks_list.html:19
+#: task_manager/tasks/filters.py:25 task_manager/tasks/models.py:41
+#: templates/tasks/task_detail.html:19 templates/tasks/tasks_list.html:19
 msgid "Executor"
 msgstr "Исполнитель"
 
@@ -145,11 +145,11 @@ msgstr "Только свои задачи"
 msgid "Description"
 msgstr "Описание"
 
-#: task_manager/tasks/models.py:51
+#: task_manager/tasks/models.py:55
 msgid "task"
 msgstr "задача"
 
-#: task_manager/tasks/models.py:52
+#: task_manager/tasks/models.py:56
 msgid "tasks"
 msgstr "задачи"
 

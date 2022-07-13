@@ -30,12 +30,15 @@ class Task(models.Model):
         Status,
         on_delete=models.PROTECT,
         blank=False,
+        related_name='status',
+        verbose_name=_('status'),
     )
     executor = models.ForeignKey(
         User,
         on_delete=models.PROTECT,
         blank=True,
         related_name='executor',
+        verbose_name=_('Executor'),
     )
     created_at = models.DateTimeField(
         _('creation date'),
@@ -44,6 +47,7 @@ class Task(models.Model):
     labels = models.ManyToManyField(
         Label,
         related_name='labels',
+        verbose_name=_('labels'),
         blank=True,
     )
 
