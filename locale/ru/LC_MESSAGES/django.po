@@ -295,7 +295,7 @@ msgstr "Добро пожаловать в Менеджер задач."
 
 #: templates/labels/labels_list.html:7
 msgid "Create new label"
-msgstr "Создать новую метку"
+msgstr "Создать метку"
 
 #: templates/labels/labels_list.html:12
 #: templates/statuses/statuses_list.html:12 templates/tasks/tasks_list.html:15
