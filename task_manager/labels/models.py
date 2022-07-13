@@ -10,6 +10,7 @@ class Label(models.Model):
     """Model representing label."""
 
     name = models.CharField(
+        _('name'),
         max_length=MAX_LENGTH,
         blank=False,
     )

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-12 18:13+0900\n"
+"POT-Creation-Date: 2022-07-13 09:03+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,16 +20,20 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: task_manager/labels/models.py:17 task_manager/statuses/models.py:11
+#: task_manager/labels/models.py:13 task_manager/statuses/models.py:10
+msgid "name"
+msgstr "Имя"
+
+#: task_manager/labels/models.py:18 task_manager/statuses/models.py:11
 #: task_manager/tasks/models.py:38
 msgid "creation date"
 msgstr "Дата создания"
 
-#: task_manager/labels/models.py:22
+#: task_manager/labels/models.py:23
 msgid "label"
 msgstr "метка"
 
-#: task_manager/labels/models.py:23
+#: task_manager/labels/models.py:24
 msgid "labels"
 msgstr "метки"
 
@@ -73,10 +77,6 @@ msgstr "Метка успешно удалена"
 #: task_manager/labels/views.py:84
 msgid "Delete label"
 msgstr "Удалить метку"
-
-#: task_manager/statuses/models.py:10
-msgid "name"
-msgstr "Имя"
 
 #: task_manager/statuses/models.py:14
 msgid "status"
