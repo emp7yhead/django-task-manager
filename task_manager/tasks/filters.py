@@ -22,10 +22,10 @@ class TaskFilter(FilterSet):
     executors_query = User.objects.values_list(
         'id', Concat('first_name', Value(' '), 'last_name'),
     )
-    executors = ChoiceFilter(label=_('Executor'), choices=executors_query)
+    executor = ChoiceFilter(label=_('Executor'), choices=executors_query)
 
     labels_query = Label.objects.values_list('id', 'name')
-    labels = ChoiceFilter(label=_('Label'), choices=labels_query)
+    label = ChoiceFilter(label=_('Label'), choices=labels_query)
 
     self_tasks = BooleanFilter(
         label=_('Current user tasks'),
@@ -43,6 +43,6 @@ class TaskFilter(FilterSet):
         model = Task
         fields = [
             'status',
-            'executors',
-            'labels',
+            'executor',
+            'label',
         ]
