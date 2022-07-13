@@ -30,7 +30,7 @@ class Task(models.Model):
         Status,
         on_delete=models.PROTECT,
         blank=False,
-        related_name='status',
+        related_name='statuses',
         verbose_name=_('status'),
     )
     executor = models.ForeignKey(
