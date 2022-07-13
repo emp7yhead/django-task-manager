@@ -342,7 +342,7 @@ msgstr "Создана"
 
 #: templates/tasks/tasks_list.html:7
 msgid "Create new task"
-msgstr "Создать новую задачу"
+msgstr "Создать задачу"
 
 #: templates/users/users_list.html:11
 msgid "Username"
