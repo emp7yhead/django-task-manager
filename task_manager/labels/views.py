@@ -1,7 +1,11 @@
 """View for Labels app."""
-
+from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
+from django.db.models import ProtectedError
+from django.db.models.signals import pre_delete
+from django.dispatch import receiver
+from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
 from django.utils.translation import gettext as _
 from django.views import generic
@@ -76,7 +80,28 @@ class DeleteLabelView(
     model = Label
     template_name = 'delete.html'
     success_url = reverse_lazy('labels:labels')
-    success_message = _('Label successfully deleted.')
+
+    @receiver(pre_delete, sender=Label)
+    def check_tasks(sender, instance, **kwargs):  # noqa: N805
+        """Raise ProtectedError if label used by task."""
+        if instance.task_set.exists():
+            raise ProtectedError('Label is used by task', Label)
+
+    def form_valid(self, form):
+        """Check if label is used by task."""
+        try:
+            self.object.delete()
+        except ProtectedError:
+            messages.error(
+                self.request,
+                _('Label is used by task'),
+            )
+        else:
+            messages.success(
+                self.request,
+                _("Label successfully deleted."),
+            )
+        return HttpResponseRedirect(self.success_url)
 
     def get_context_data(self, **kwargs):
         """Define the title text."""
