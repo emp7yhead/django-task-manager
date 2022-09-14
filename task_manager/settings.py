@@ -13,9 +13,16 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 
 DEBUG = os.getenv('DEBUG', 'true').lower()
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://*.railway.app',
+]
 
 ALLOWED_HOSTS = [
-    '*',
+    'localhost',
+    '127.0.0.1',
+    'webserver',
+    '.herokuapp.com',
+    '.railway.app',
 ]
 
 INSTALLED_APPS = [
