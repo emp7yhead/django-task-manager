@@ -19,6 +19,7 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
     'webserver',
     '.herokuapp.com',
+    '.railway.app'
 ]
 
 INSTALLED_APPS = [
