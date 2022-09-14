@@ -15,11 +15,7 @@ DEBUG = os.getenv('DEBUG', 'true').lower()
 
 
 ALLOWED_HOSTS = [
-    'localhost',
-    '127.0.0.1',
-    'webserver',
-    '.herokuapp.com',
-    '.railway.app'
+    '*',
 ]
 
 INSTALLED_APPS = [
