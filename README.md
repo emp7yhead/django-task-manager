@@ -1,5 +1,5 @@
 # task-manager
-[![Actions Status](https://github.com/emp7yhead/python-project-lvl4/workflows/hexlet-check/badge.svg)](https://github.com/emp7yhead/python-project-lvl4/actions)
+
 [![CI](https://github.com/emp7yhead/python-project-lvl4/actions/workflows/main.yml/badge.svg)](https://github.com/emp7yhead/python-project-lvl4/actions/workflows/main.yml)
 [![Maintainability](https://api.codeclimate.com/v1/badges/e5b4a102977d30a7c23e/maintainability)](https://codeclimate.com/github/emp7yhead/python-project-lvl4/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/e5b4a102977d30a7c23e/test_coverage)](https://codeclimate.com/github/emp7yhead/python-project-lvl4/test_coverage)
@@ -7,6 +7,7 @@
 Web app for managing tasks between people. Created with Django and PostgreSQL.
 
 https://empty-task-manager.herokuapp.com/
+
 ## Dependencies:
 - python = "^3.10"
 - Django = "^4.0.4"
